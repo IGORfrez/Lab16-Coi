@@ -59,3 +59,91 @@
 //     Console.WriteLine(slot);
 // }
 
+// int[] grades = { 4, 5, 3, 5, 4, 2 };
+// Array.Sort(grades);
+// foreach (int grade in grades) {
+//     Console.WriteLine(grade);
+// }
+
+// Console.Write("Введите N: ");
+// int n = int.Parse(Console.ReadLine());
+// int[] squares = new int[n];
+
+// for (int i = 0; i < n; i++) {
+//     squares[i] = (i + 1) * (i + 1);
+// }
+
+// foreach (int num in squares) {
+//     Console.WriteLine(num);
+// }
+
+// int[] GenerateEvenNumbers(int n) {
+//     int count = n / 2;
+//     int[] even = new int[count];
+//     for (int i = 0; i < count; i++) {
+//         even[i] = (i + 1) * 2;
+//     }
+
+//     return even;
+// }
+// int[] result = GenerateEvenNumbers(10);
+// foreach (int num in result) {
+//     Console.WriteLine(num);
+// }
+
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+// if (string.IsNullOrEmpty(surname)) {
+// Console.WriteLine("Фамилия не введена. Завершение работы.");
+// return;
+// }
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+// var assigned = Enumerable.Range(1, 10)
+// .OrderBy(_ => rnd.Next())
+// .Take(2)
+// .OrderBy(x => x)
+// .ToList();
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+// Console.Write("Введите размер массива: ");
+// int size = int.Parse(Console.ReadLine());
+// int[] numbers = new int[size];
+// Console.WriteLine("Введите элементы массива:");
+// for (int i = 0; i < size; i++)
+// {
+//     numbers[i] = int.Parse(Console.ReadLine());
+// }
+// for (int i = 0; i < size / 2; i++)
+// {
+//     int temp = numbers[i];
+//     numbers[i] = numbers[size - 1 - i];
+//     numbers[size - 1 - i] = temp;
+// }
+
+// Console.WriteLine("Развёрнутый массив:");
+// foreach (int num in numbers)
+// {
+//     Console.Write(num + " ");
+// }
+
+Console.Write("Введите размер массива: ");
+int size = int.Parse(Console.ReadLine());
+int[] numbers = new int[size];
+Console.WriteLine("Введите элементы массива:");
+for (int i = 0; i < size; i++)
+{
+    numbers[i] = int.Parse(Console.ReadLine());
+}
+Array.Sort(numbers);
+int max = numbers[size - 1];
+int secondMax = max;
+for (int i = size - 2; i >= 0; i--)
+{
+    if (numbers[i] != max)
+    {
+        secondMax = numbers[i];
+        break;
+    }
+}
+
+Console.WriteLine($"Второе по величине число: {secondMax}");
